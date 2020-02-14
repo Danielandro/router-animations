@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { FADE_IN_ANIMATION, FADE_DOWN_ANIMATION } from "./animations/fading";
+import { FADE_IN_ANIMATION } from "./animations/fading";
 
 @Component({
   selector: 'app-root',
@@ -18,6 +18,10 @@ export class AppComponent {
   }
 
   onAnimationStart(event) {
-    console.log("START: ", event);
+    console.log(`START: FROM STATE - ${event.fromState} -> TO STATE - ${event.toState}`);
+  }
+
+  onAnimationEnd(event) {
+    console.log("-----DONE-------");
   }
 }

@@ -3,7 +3,7 @@
 <a [routerLink]="['page-two']" class="page-link">Page Two</a>
 <a [routerLink]="['page-three']" class="page-link">Page Three</a>
 <div class="outlet-container" [@routeAnimation]="prepareRoute(outlet)"
-  (@routeAnimation.start)="onAnimationStart($event)">
+  (@routeAnimation.start)="onAnimationStart($event)" (@routeAnimation.done)="onAnimationEnd($event)">
   <router-outlet #outlet="outlet"></router-outlet>
 </div>
 
