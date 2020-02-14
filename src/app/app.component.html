@@ -2,6 +2,9 @@
 <a [routerLink]="['page-one']" class="page-link">Page One</a>
 <a [routerLink]="['page-two']" class="page-link">Page Two</a>
 <a [routerLink]="['page-three']" class="page-link">Page Three</a>
-<div class="outlet-container" [@routeAnimation]="prepareRoute(outlet)">
+<div class="outlet-container" [@routeAnimation]="prepareRoute(outlet)"
+  (@routeAnimation.start)="onAnimationStart($event)">
   <router-outlet #outlet="outlet"></router-outlet>
 </div>
+
+<!-- [@routeAnimation]="prepareRoute(outlet)" -->

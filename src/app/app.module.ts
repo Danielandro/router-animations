@@ -23,7 +23,7 @@ import { PageThreeComponent } from './pages/page-three/page-three.component';
     RouterModule.forRoot([
       { path: "page-one", component: PageOneComponent, data: { animation: "PageOne" } },
       { path: "page-two", component: PageTwoComponent, data: { animation: "PageTwo" } },
-      { path: "page-three", component: PageThreeComponent },
+      { path: "page-three", component: PageThreeComponent, data: { animation: "PageThree" } },
       { path: "**", redirectTo: "/", pathMatch: "full" }
     ])
   ],
