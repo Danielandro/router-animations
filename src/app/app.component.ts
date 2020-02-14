@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { FADE_IN_ANIMATION } from "./animations/fading";
+import { ROUTE_ANIMATIONS } from "./animations/route-animations";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  animations: [FADE_IN_ANIMATION]
+  animations: [ROUTE_ANIMATIONS]
 })
 export class AppComponent {
   title = 'router-animations';
