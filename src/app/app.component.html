@@ -2,4 +2,6 @@
 <a [routerLink]="['page-one']" class="page-link">Page One</a>
 <a [routerLink]="['page-two']" class="page-link">Page Two</a>
 <a [routerLink]="['page-three']" class="page-link">Page Three</a>
-<router-outlet></router-outlet>
+<div class="outlet-container" [@routeAnimation]="prepareRoute(outlet)">
+  <router-outlet #outlet="outlet"></router-outlet>
+</div>

@@ -21,8 +21,8 @@ import { PageThreeComponent } from './pages/page-three/page-three.component';
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot([
-      { path: "page-one", component: PageOneComponent },
-      { path: "page-two", component: PageTwoComponent },
+      { path: "page-one", component: PageOneComponent, data: { animation: "PageOne" } },
+      { path: "page-two", component: PageTwoComponent, data: { animation: "PageTwo" } },
       { path: "page-three", component: PageThreeComponent },
       { path: "**", redirectTo: "/", pathMatch: "full" }
     ])
