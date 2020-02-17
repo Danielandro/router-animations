@@ -156,8 +156,42 @@ const fadeRight =
     query(":enter", animateChild())
   ], { params: { time: "300ms", timingFunction: "cubic-bezier(.12,.99,.94,.95)" } });
 
+const fadeDown =
+  animation([
+    // intial style of parent and child views
+    style({ position: "relative" }),
+    query(":enter, :leave", style({
+      position: "absolute",
+      top: "0px",
+      left: "0px",
+      height: "100%",
+      width: "100%"
+    })),
+    // move entering view off the page
+    query(":enter", style({
+      top: "-2000px",
+      opacity: "0"
+    })),
+    // run any animations on leaving view
+    query(":leave", animateChild()),
+    // run entering & leaving view animations
+    group([
+      query(":enter", animate("300ms ease-in", style({
+        top: "0px",
+        opacity: "1"
+      }))),
+      query(":leave", animate("300ms ease-in", style({
+        top: "-2000px",
+        opacity: "0"
+      })))
+    ]),
+    // once new view shows, run its animations
+    query(":enter", animateChild())
+  ]);
+
 export const ROUTE_ANIMATIONS = trigger("routeAnimation", [
   transition("PageOne => *", useAnimation(fadeLeft, { params: { timingFunction: "ease-in" } })),
-  transition("PageThree => *", useAnimation(fadeRight))
+  transition("PageThree => *", useAnimation(fadeRight)),
+  transition("PageTwo => *", useAnimation(fadeDown))
 ]);
 
