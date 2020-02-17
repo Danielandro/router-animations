@@ -18,10 +18,10 @@ export class AppComponent {
   }
 
   onAnimationStart(event) {
-    console.log(`START: FROM STATE - ${event.fromState} -> TO STATE - ${event.toState}`);
+    // console.log(`START: FROM STATE - ${event.fromState} -> TO STATE - ${event.toState}`);
   }
 
   onAnimationEnd(event) {
-    console.log("-----DONE-------");
+    // console.log("-----DONE-------");
   }
 }

@@ -1,3 +1,19 @@
 .bg-red {
   background-color: red;
 }
+
+.children {
+  margin: 0 auto;
+  position: relative;
+
+  .child {
+    // position: absolute;
+    height: 100px;
+    width: 100px;
+    background-color: mediumaquamarine;
+    text-align: center;
+    border: 2px solid #000;
+    display: inline-block;
+    margin: 20px 100px;
+  }
+}
